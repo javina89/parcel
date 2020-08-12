@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'moment-timezone'
 
 export const Top = () => {
 
-    const [time, setTime] = useState(moment(Date.now()).tz('America/Chicago').format("LT"))
+    const [time, setTime] = useState((new Date()).toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      }))
 
     useEffect(()=> {
         const timer = setInterval(() => {
-            setTime(moment(Date.now()).tz('America/Chicago').format("LT"))
+            setTime((new Date()).toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+              }))
         }, 1000)
         return () => {
             clearInterval(timer)
