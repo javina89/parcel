@@ -1,0 +1,33 @@
+{
+  "name": "jesusavina.com",
+  "version": "1.0.0",
+  "description": "Personal Portfolio",
+  "scripts": {
+    "test": "parcel build ./src/index.html",
+    "dev": "npm run build:css && parcel serve ./src/index.html -p 3000",
+    "build": "npm run build:css && parcel build ./src/index.html",
+    "build:css": "postcss ./tailwind/tailwind.css -o ./tailwind/styles.css --env=production",
+    "clean": "rm -rf .parcel-cache dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javina89/jesusavina.com.git"
+  },
+  "author": "Jesus Avina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javina89/jesusavina.com/issues"
+  },
+  "homepage": "https://github.com/javina89/jesusavina.com#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "parcel": "^2.0.0-beta.1",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.6.2"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.31",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
