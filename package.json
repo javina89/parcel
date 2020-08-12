@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "Personal Portfolio",
   "scripts": {
-    "test": "parcel build ./src/index.html",
-    "dev": "npm run build:css && parcel serve ./src/index.html -p 3000",
-    "build": "npm run build:css && parcel build ./src/index.html",
-    "build:css": "postcss ./tailwind/tailwind.css -o ./tailwind/styles.css --env=production",
-    "clean": "rm -rf .parcel-cache dist"
+    "dev": "parcel serve ./src/index.html -p 3000",
+    "build": "npm run clean && parcel build --no-source-maps ./src/index.html",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -22,7 +20,7 @@
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "parcel": "^2.0.0-beta.1",
-    "postcss-cli": "^7.1.1",
+    "rimraf": "^3.0.2",
     "tailwindcss": "^1.6.2"
   },
   "dependencies": {
