@@ -16,7 +16,7 @@ module.exports = {
     plugins: [],
     purge: {
       // set to true for production
-      // enabled: true,
+      enabled: process.env.NODE_ENV_TEMP !== "development",
       // include every file with tailwind classes
       content: [
         './src/**/*.tsx',
@@ -24,4 +24,4 @@ module.exports = {
       ],
     },
   }
-  
+  console.log(process.env.NODE_ENV_TEMP, process.env.NODE_ENV_TEMP !== "development");

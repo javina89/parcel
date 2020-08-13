@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Personal Portfolio",
   "scripts": {
-    "dev": "parcel serve ./src/index.html -p 3000",
+    "dev": "env NODE_ENV_TEMP=development parcel serve ./src/index.html -p 3000",
     "build": "npm run clean && parcel build --no-source-maps ./src/index.html",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf .parcel-cache dist"
   },
   "repository": {
     "type": "git",
